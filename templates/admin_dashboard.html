@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <h3>Content Posts</h3>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Body</th>
+            <th>Target Plans</th>
+        </tr>
+        {% for content in contents %}
+        <tr>
+            <td>{{ content[1] }}</td>
+            <td>{{ content[2] }}</td>
+            <td>{{ content[3] | tojson }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
